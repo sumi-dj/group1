@@ -1,0 +1,14 @@
+package com.demo.project;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@EnableSwagger2
+public class Group1JstFoodsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Group1JstFoodsApplication.class, args);
+	}
+
+}

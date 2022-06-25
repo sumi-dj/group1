@@ -1,0 +1,5 @@
+package com.demo.project.entities;
+
+public class MyUser {
+
+}
