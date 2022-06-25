@@ -3008,3 +3008,21 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:35:33.501
 !MESSAGE executing callback sts4.classpath.IeZRbgod SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 18:49:55.863
+!MESSAGE Preparing classpath changed notification menu-rest-1
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 18:49:55.865
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 18:49:55.876
+!MESSAGE classpath=126 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 18:49:55.886
+!MESSAGE buffering callback sts4.classpath.IeZRbgod menu-rest-1 false 126
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 18:49:55.887
+!MESSAGE executing callback sts4.classpath.IeZRbgod 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 18:49:55.932
+!MESSAGE executing callback sts4.classpath.IeZRbgod SUCCESS [done]

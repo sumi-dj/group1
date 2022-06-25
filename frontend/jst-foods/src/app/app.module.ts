@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuGridComponent } from './menu-grid/menu-grid.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { MenuGridComponent } from './menu-grid/menu-grid.component';
     AboutComponent,
     MenuComponent,
     MenuGridComponent,
+  
    
   ],
   imports: [
