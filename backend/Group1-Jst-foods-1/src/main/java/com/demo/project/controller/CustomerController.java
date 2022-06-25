@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.project.api.MenuApi;
 import com.demo.project.entities.AuthRequest;
 import com.demo.project.entities.Customer;
+import com.demo.project.entities.Menu;
 import com.demo.project.service.CustomerService;
 
 
@@ -24,6 +26,9 @@ import com.demo.project.service.CustomerService;
 public class CustomerController {
 	@Autowired
 	private CustomerService cs;
+	
+	@Autowired
+	private MenuApi ma;
 	
 	@PostMapping
 	public Customer registerCustomer(@RequestBody Customer customer)
@@ -75,7 +80,10 @@ public class CustomerController {
 		}
 		return x;
 	}
-
-	
+    @GetMapping("/menu")
+	public List<Menu> getAllMenus()
+	{
+		return ma.getAllMenus();
+	}
 }
 
