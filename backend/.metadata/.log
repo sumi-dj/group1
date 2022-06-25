@@ -2972,3 +2972,39 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 16:28:03.295
 !MESSAGE executing callback sts4.classpath.IeZRbgod SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:34:22.504
+!MESSAGE Preparing classpath changed notification Group1-Jst-foods-1
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:34:22.553
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:34:22.562
+!MESSAGE classpath=130 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:34:22.597
+!MESSAGE buffering callback sts4.classpath.IeZRbgod Group1-Jst-foods-1 false 130
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:34:22.623
+!MESSAGE executing callback sts4.classpath.IeZRbgod 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:34:23.551
+!MESSAGE executing callback sts4.classpath.IeZRbgod SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:35:33.414
+!MESSAGE Preparing classpath changed notification Group1-Jst-foods-1
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:35:33.415
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:35:33.427
+!MESSAGE classpath=126 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:35:33.436
+!MESSAGE buffering callback sts4.classpath.IeZRbgod Group1-Jst-foods-1 false 126
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:35:33.437
+!MESSAGE executing callback sts4.classpath.IeZRbgod 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-25 17:35:33.501
+!MESSAGE executing callback sts4.classpath.IeZRbgod SUCCESS [done]
