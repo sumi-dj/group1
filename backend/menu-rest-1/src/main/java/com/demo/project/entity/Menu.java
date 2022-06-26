@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -13,13 +14,13 @@ public class Menu {
 
 	@Id
 	
-	private Long id;
+	private Integer  id;
 	private String name;
 	private String description;
 	private Double price;
 	private byte[] pics;
 	
-	public Menu(Long id, String name, String description, Double price, byte[] pics) {
+	public Menu(Integer id, String name, String description, Double price, byte[] pics) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -33,10 +34,10 @@ public class Menu {
 	public void setPics(byte[] pics) {
 		this.pics = pics;
 	}
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -57,7 +58,7 @@ public class Menu {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	public Menu(Long id, String name, String description, Double price) {
+	public Menu(Integer id, String name, String description, Double price) {
 		super();
 		this.id = id;
 		this.name = name;

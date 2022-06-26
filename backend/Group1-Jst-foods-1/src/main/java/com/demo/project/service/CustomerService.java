@@ -31,6 +31,15 @@ public class CustomerService {
 		}
 		return c;
 	}
+	public Customer read(String name) {
+		Optional<Customer> temp = cr.findByName(name);
+		Customer c=null;
+		if(temp.isPresent())
+		{
+			c=temp.get();
+		}
+		return c;
+	}
 	public Customer update(Customer customer) {
 		Optional<Customer> temp = cr.findById(customer.getId());
 		Customer c=null;

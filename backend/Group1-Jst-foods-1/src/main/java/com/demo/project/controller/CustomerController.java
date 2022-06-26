@@ -47,6 +47,11 @@ public class CustomerController {
 	{
 		return cs.read(id);
 	}
+	@GetMapping("/{name}")
+	public Customer findCustomeName(@PathVariable("name") String name)
+	{
+		return cs.read(name);
+	}
 	
 	@PutMapping
 	public Customer updateCustomer(@RequestBody Customer customer)
@@ -62,8 +67,8 @@ public class CustomerController {
 	@PostMapping("/login")
 	public Customer validateLogin(@RequestBody AuthRequest authRequest)
 	{
-		Integer id=authRequest.getId();
-		Customer x = findCustomerId(id); 
+		String name=authRequest.getName();
+		Customer x = findCustomeName(name); 
 		
 		boolean status=false;
 		if(x!=null)
@@ -80,7 +85,9 @@ public class CustomerController {
 		}
 		return x;
 	}
-    @GetMapping("/menu")
+   
+
+	@GetMapping("/menu")
 	public List<Menu> getAllMenus()
 	{
 		return ma.getAllMenus();

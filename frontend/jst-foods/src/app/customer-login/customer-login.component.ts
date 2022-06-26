@@ -12,7 +12,7 @@ customerLoginForm:any;
   constructor(private fb:FormBuilder,private cs:CustomerRegistrationService) { this.customerLoginForm=this.fb.group({
      
    
-    id:[],
+    name:[],
     password:[]
     
   }); }

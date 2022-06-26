@@ -20,11 +20,11 @@ public interface MenuApi {
 	@GetMapping
 	public List<Menu> getAllMenus() ;
 	@GetMapping
-	public Menu findMenuById(@PathVariable("id") Long id) ;
+	public Menu findMenuById(@PathVariable("id") Integer id) ;
 	@PutMapping
 	public Menu modifyMenu(@RequestBody Menu menu) ;
 	@DeleteMapping
-	public void removeMenu(@PathVariable("id") Long id) ;
+	public void removeMenu(@PathVariable("id") Integer id) ;
 	
 }
 

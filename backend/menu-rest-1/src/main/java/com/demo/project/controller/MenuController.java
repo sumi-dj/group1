@@ -47,7 +47,7 @@ public class MenuController {
 		return ms.read();
 	}
 	@GetMapping("/menu/{id}")
-	public Menu findMenuById(@PathVariable("id") Long id) {
+	public Menu findMenuById(@PathVariable("id") Integer id) {
 		return ms.read(id);
 	}
 	@PutMapping("/menu")
@@ -55,7 +55,7 @@ public class MenuController {
 		return ms.update(menu); 
 	}
 	@DeleteMapping("/menu/{id}")
-	public void removeMenu(@PathVariable("id") Long id) {
+	public void removeMenu(@PathVariable("id") Integer id) {
 		ms.delete(findMenuById(id));
 	}
 	
