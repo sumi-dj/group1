@@ -18,7 +18,7 @@ public class CustomerService {
 	@Autowired
 	private CustomerRepository cr;
 	
-	public Customer create(Customer customer) throws CustomerAlreadyExists, CustomerNotFoundException {
+	public Customer create(Customer customer) throws CustomerAlreadyExists, CustomerNotFoundException  {
 		Customer temp=readbyEmail(customer.getEmail());
 		if(temp==null)
 		{
@@ -27,6 +27,7 @@ public class CustomerService {
 		else
 		{
 			throw new CustomerAlreadyExists("customer with id:"+customer.getEmail()+"already exists can not create");
+			
 		}
 		return cr.save(customer);
 	}
@@ -42,16 +43,17 @@ public class CustomerService {
 		}
 		return c;
 	}
-	public Customer readbyEmail(String email) throws CustomerNotFoundException {
-		Optional<Customer> temp = cr.findByEmail(email);
+	public Customer readbyEmail(String email) throws CustomerNotFoundException  {
+		List<Customer> temp = cr.findByEmail(email);
 		Customer c=null;
-		if(temp.isPresent())
+		if(temp.size()==1)
 		{
-			c=temp.get();
+			c=temp.get(0);
 		}
 		else
 		{
 			throw new CustomerNotFoundException("create new customer");
+			
 		}
 		return c;
 	}
@@ -65,9 +67,9 @@ public class CustomerService {
 		return c;
 	}
 	public Customer update(Customer customer) {
-		Optional<Customer> temp = cr.findByEmail(customer.getEmail());
+		List<Customer> temp = cr.findByEmail(customer.getEmail());
 		Customer c=null;
-		if(temp.isPresent())
+		if(temp.size()==1)
 		{
 			c=customer;
 			cr.save(customer);

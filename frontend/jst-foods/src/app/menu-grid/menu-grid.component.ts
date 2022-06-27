@@ -15,5 +15,12 @@ menus:any;
       this.menus=data;
     });
   }
-
+   fnSelect(name:any,id:any)
+   {
+    alert("hi you have selected "+name);
+    this.ms.findMenuById(id).subscribe((data)=>{
+     // console.log(data)
+     
+    })
+   }
 }

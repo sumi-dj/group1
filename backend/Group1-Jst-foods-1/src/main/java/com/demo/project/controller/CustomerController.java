@@ -54,6 +54,11 @@ public class CustomerController {
 	{
 		return cs.read(name);
 	}
+	@GetMapping("/email/{id}")
+	public Customer findCustomerByEmail(@PathVariable("id") String email) throws CustomerNotFoundException
+	{
+		return cs.readbyEmail(email);
+	}
 	
 	@PutMapping
 	public Customer updateCustomer(@RequestBody Customer customer)
