@@ -1,35 +1,31 @@
 package com.demo.project.entities;
 
 public class AuthRequest {
-	private Integer id;
+	private String name;
 	private String password;
-	public AuthRequest(Integer id, String password) {
-		super();
-		this.id = id;
-		this.password = password;
+	public String getName() {
+		return name;
 	}
-	
-	public AuthRequest() {}
-
-	public Integer getId() {
-		return id;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	@Override
 	public String toString() {
-		return "AuthRequest [id=" + id + ", password=" + password + "]";
+		return "AuthRequest [name=" + name + ", password=" + password + "]";
+	}
+	public AuthRequest(String name, String password) {
+		super();
+		this.name = name;
+		this.password = password;
+	}
+	public AuthRequest() {
+		super();
 	}
 	
 }

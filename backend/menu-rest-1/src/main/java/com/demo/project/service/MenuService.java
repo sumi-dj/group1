@@ -20,7 +20,7 @@ public class MenuService {
 	public List<Menu> read() {
 		return mr.findAll();
 	}
-	public Menu read(Long id) {
+	public Menu read(Integer id) {
 		return mr.findById(id).get();
 	}
 	public Menu update(Menu menu) {

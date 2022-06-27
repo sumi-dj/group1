@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.project.api.MenuApi;
 import com.demo.project.entities.AuthRequest;
 import com.demo.project.entities.Customer;
+import com.demo.project.entities.Menu;
+import com.demo.project.exception.CustomerAlreadyExists;
+import com.demo.project.exception.CustomerNotFoundException;
 import com.demo.project.service.CustomerService;
 
 
@@ -25,8 +29,11 @@ public class CustomerController {
 	@Autowired
 	private CustomerService cs;
 	
+	@Autowired
+	private MenuApi ma;
+	
 	@PostMapping
-	public Customer registerCustomer(@RequestBody Customer customer)
+	public Customer registerCustomer(@RequestBody Customer customer) throws CustomerAlreadyExists, CustomerNotFoundException
 	{
 		return cs.create(customer);
 	}
@@ -42,6 +49,11 @@ public class CustomerController {
 	{
 		return cs.read(id);
 	}
+	@GetMapping("/{name}")
+	public Customer findCustomeName(@PathVariable("name") String name)
+	{
+		return cs.read(name);
+	}
 	
 	@PutMapping
 	public Customer updateCustomer(@RequestBody Customer customer)
@@ -54,11 +66,12 @@ public class CustomerController {
 	{
 		return cs.delete(id);
 	}
+	
 	@PostMapping("/login")
 	public Customer validateLogin(@RequestBody AuthRequest authRequest)
 	{
-		Integer id=authRequest.getId();
-		Customer x = findCustomerId(id); 
+		String name=authRequest.getName();
+		Customer x = findCustomeName(name); 
 		
 		boolean status=false;
 		if(x!=null)
@@ -75,7 +88,12 @@ public class CustomerController {
 		}
 		return x;
 	}
+   
 
-	
+	@GetMapping("/menu")
+	public List<Menu> getAllMenus()
+	{
+		return ma.getAllMenus();
+	}
 }
 

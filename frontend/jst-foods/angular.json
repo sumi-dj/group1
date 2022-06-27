@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jst-foods": {
+    "Jst-foods": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "jst-foods:build:production"
+              "browserTarget": "Jst-foods:build:production"
             },
             "development": {
-              "browserTarget": "jst-foods:build:development"
+              "browserTarget": "Jst-foods:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "jst-foods:build"
+            "browserTarget": "Jst-foods:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "jst-foods"
+  "defaultProject": "Jst-foods"
 }
