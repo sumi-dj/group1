@@ -9,6 +9,7 @@ import { CustomerRegistrationService } from '../custome-registration.service';
 })
 export class CustomerRegistrationComponent implements OnInit {
   customerRegistrationForm:any;
+  o:any;
   constructor(private fb:FormBuilder,private crs:CustomerRegistrationService) {
     this.customerRegistrationForm=this.fb.group({
      
@@ -26,6 +27,10 @@ export class CustomerRegistrationComponent implements OnInit {
 fnSubmit()
 {
   alert("hi");
-  this.crs.fnCreate(this.customerRegistrationForm.value).subscribe((data)=>console.log(data));
+  this.o=this.crs.fnCreate(this.customerRegistrationForm.value).subscribe((data)=>console.log(data));
+  if(this.o!=null)
+  {
+     alert("Sign-up successfull: You can login and Enjoy");
+  }
 }
 }

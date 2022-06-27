@@ -17,6 +17,8 @@ import com.demo.project.api.MenuApi;
 import com.demo.project.entities.AuthRequest;
 import com.demo.project.entities.Customer;
 import com.demo.project.entities.Menu;
+import com.demo.project.exception.CustomerAlreadyExists;
+import com.demo.project.exception.CustomerNotFoundException;
 import com.demo.project.service.CustomerService;
 
 
@@ -31,7 +33,7 @@ public class CustomerController {
 	private MenuApi ma;
 	
 	@PostMapping
-	public Customer registerCustomer(@RequestBody Customer customer)
+	public Customer registerCustomer(@RequestBody Customer customer) throws CustomerAlreadyExists, CustomerNotFoundException
 	{
 		return cs.create(customer);
 	}
@@ -64,6 +66,7 @@ public class CustomerController {
 	{
 		return cs.delete(id);
 	}
+	
 	@PostMapping("/login")
 	public Customer validateLogin(@RequestBody AuthRequest authRequest)
 	{

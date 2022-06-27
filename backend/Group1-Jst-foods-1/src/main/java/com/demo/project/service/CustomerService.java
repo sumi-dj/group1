@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.demo.project.entities.Customer;
+import com.demo.project.exception.CustomerAlreadyExists;
+import com.demo.project.exception.CustomerNotFoundException;
 import com.demo.project.repository.CustomerRepository;
 
 
@@ -16,7 +18,16 @@ public class CustomerService {
 	@Autowired
 	private CustomerRepository cr;
 	
-	public Customer create(Customer customer) {
+	public Customer create(Customer customer) throws CustomerAlreadyExists, CustomerNotFoundException {
+		Customer temp=readbyEmail(customer.getEmail());
+		if(temp==null)
+		{
+		  cr.save(customer);
+		}
+		else
+		{
+			throw new CustomerAlreadyExists("customer with id:"+customer.getEmail()+"already exists can not create");
+		}
 		return cr.save(customer);
 	}
 	public List<Customer> read() {
@@ -31,6 +42,19 @@ public class CustomerService {
 		}
 		return c;
 	}
+	public Customer readbyEmail(String email) throws CustomerNotFoundException {
+		Optional<Customer> temp = cr.findByEmail(email);
+		Customer c=null;
+		if(temp.isPresent())
+		{
+			c=temp.get();
+		}
+		else
+		{
+			throw new CustomerNotFoundException("create new customer");
+		}
+		return c;
+	}
 	public Customer read(String name) {
 		Optional<Customer> temp = cr.findByName(name);
 		Customer c=null;
@@ -41,7 +65,7 @@ public class CustomerService {
 		return c;
 	}
 	public Customer update(Customer customer) {
-		Optional<Customer> temp = cr.findById(customer.getId());
+		Optional<Customer> temp = cr.findByEmail(customer.getEmail());
 		Customer c=null;
 		if(temp.isPresent())
 		{
