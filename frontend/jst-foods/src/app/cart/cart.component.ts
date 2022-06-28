@@ -17,8 +17,8 @@ export class CartComponent implements OnInit {
    id:[],
    name:[],
    description:[],
-   price:[],
-   picture:[]
+   price:[]
+  
  });}
  ngOnInit(): void {
    this.ms.retrieveAllItems().subscribe((data)=>{
@@ -57,9 +57,11 @@ deleteMenu()
    console.log(data);
  })
 }
-fnSelect(name:any,id:any)
+fnSelect(name:any,id:any,price:any)
   {
    alert("hi you have selected "+name);
+   var n=name
+   var p=price
    this.ms.findMenuById(id).subscribe((data)=>{
     // console.log(data)
     this.menuForm.patchValue(data);

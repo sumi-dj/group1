@@ -31,17 +31,7 @@ public class MenuController {
 	public Menu addMenu(@RequestBody Menu menu) {
 		return ms.create(menu);
 	}
-	/*
-	 * @PostMapping("/menu") public Menu addMenu(@RequestParam("id") Long
-	 * id,@RequestParam("name") String name,@RequestParam("price") Double
-	 * price,@RequestParam("description") String
-	 * description,@RequestParam("picture") MultipartFile picture) throws
-	 * IOException { System.out.println(id); System.out.println(picture); byte[]
-	 * pic=picture.getBytes(); Menu menu=new Menu(id,name,description,price,pic);
-	 * menu.setPics(pic); return ms.create(menu);
-	 * 
-	 * }
-	 */
+	
 	@GetMapping("/menu")
 	public List<Menu> getAllMenus() {
 		return ms.read();

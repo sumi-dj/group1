@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class MenuService {
   // URL='http://localhost:5001/menu'
-  URL='http://localhost:8081/customer/menu'
+  URL='http://localhost:8082/menu'
   constructor(private http:HttpClient) { }
   retrieveAllItems():Observable<any>
   {

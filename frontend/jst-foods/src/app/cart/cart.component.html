@@ -7,8 +7,8 @@
     </thead>
     <tbody>
         <tr *ngFor="let i of menus">
-        <td >{{i.id}}</td>
-        <td class="btn btn-success" (click)="fnSelect(i.name,i.id)">{{i.name}}</td>
+        <td ><div>{{i.id}}</div></td>
+        <td class="btn btn-success" (click)="fnSelect(i.name,i.id,i.price)"><div>{{i.name}}</div></td>
         <td>{{i.description}}</td>
         <td>{{i.price}}</td>
          <!-- <td>{{i.picture}}</td>   -->

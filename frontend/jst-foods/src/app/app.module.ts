@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuGridComponent } from './menu-grid/menu-grid.component';
 import { CartComponent } from './cart/cart.component';
 import { DeliveryPartnerComponent } from './delivery-partner/delivery-partner.component';
+import { AdminCarComponent } from './admin-car/admin-car.component';
 
 
 
@@ -32,6 +33,7 @@ import { DeliveryPartnerComponent } from './delivery-partner/delivery-partner.co
     MenuGridComponent,
     CartComponent,
     DeliveryPartnerComponent,
+    AdminCarComponent,
  
     
   
