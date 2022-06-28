@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuGridComponent } from './menu-grid/menu-grid.component';
+import { DeliveryPartnerComponent } from './delivery-partner/delivery-partner.component';
 
 
 
@@ -28,6 +29,7 @@ import { MenuGridComponent } from './menu-grid/menu-grid.component';
     AboutComponent,
     MenuComponent,
     MenuGridComponent,
+    DeliveryPartnerComponent,
  
     
   
