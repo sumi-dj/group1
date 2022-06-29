@@ -1,0 +1,12 @@
+<form [formGroup]="deliveryPartnerregistrationForm">
+    Id: <input type="number" nmae="" id="" formControlName="id" class="form-control">
+    Name: <input type="text" nmae="" id="" formControlName="name" class="form-control">
+    Location: <input type="text" nmae="" id="" formControlName="location" class="form-control">
+    Rating: <input type="number" nmae="" id="" formControlName="rating" class="form-control">
+    Suggestion: <input type="text" nmae="" id="" formControlName="suggestions" class="form-control">
+    <br>
+
+    <input type="button" value="Submit" class="btn-success" (click)="fnSubmit()">
+</form>
+{{deliveryPartnerregistrationForm.value|json}}
+

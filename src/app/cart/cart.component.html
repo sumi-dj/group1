@@ -1,0 +1,39 @@
+<!-- menu-grid -->
+<table class="table table-boardered table-striped table-hover">
+    <thead>
+    <tr>
+         <th>Id</th><th>Name</th><th>Description</th><th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of menus">
+        <td >{{i.id}}</td>
+        <td class="btn btn-success" (click)="fnSelect(i.name,i.id)">{{i.name}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.price}}</td>
+         <!-- <td>{{i.picture}}</td>   -->
+        
+    
+    
+        </tr>
+    </tbody>
+    
+    <!-- <a routerLink="menu"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a> -->
+    </table>
+    
+  
+  
+  <h4 class="text-center">Add to Cart</h4>
+  <form [formGroup]="menuForm">
+       Id:<input type="number" name="" id="" formControlName="id" class="form-control"> 
+     Name: <input type="text" name="" id="" formControlName="name" class="form-control">
+     Description:<input type="text" name="" id="" formControlName="description" class="form-control">
+     Price:<input type="number" name="" id="" formControlName="price" class="form-control">
+      <!-- Picture:<input type="file"name="" id="" formControlName="picture" class="form-control" (change)="onFileChanged($event)">  -->
+      <br>
+      <input type="button" value="Add  To Cart" class="btn btn-success" (click)="addMenu()"><br><br>
+      <input type="update" value="modify" class="btn btn-primary" (click)="updateMenu()"><br><br>
+      <input type="delete" value="delete" class="btn btn-warning"(click)="deleteMenu()">
+  </form>
+  {{menuForm.value | json}}
+  

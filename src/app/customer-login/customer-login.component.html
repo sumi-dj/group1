@@ -1,0 +1,13 @@
+<!-- <h4 class="text-center">Customer Login Form</h4> -->
+<form [formGroup]="customerLoginForm">
+    <!-- Id:<input type="number" name="" id="" formControlName="id" class="form-control"> -->
+    UserName: <input type="text" name="" id="" formControlName="name" class="form-control">
+    Password: <input type="password" name="" id="" formControlName="password" class="form-control">
+   
+    <br>
+    <input type="button" value="Login" class="btn btn-primary" (click)="fnsubmit()">&nbsp;
+    <input type="reset" value="reset" class="btn btn-danger">
+</form>
+{{customerLoginForm.value | json}}
+
+<!-- <button (click)="goToPage('Menu')">go</button> -->

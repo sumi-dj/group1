@@ -1,0 +1,9 @@
+
+div {
+  background-color: rgb(248, 240, 240);
+  width: 500px;
+  height: 500px; ;
+  border: 15px solid rgb(238, 98, 145);
+  padding: 50px;
+  margin: 20px;
+} 

@@ -1,0 +1,14 @@
+<!-- <h4 class="text-center">Customer Registration Form</h4> -->
+<form [formGroup]="customerRegistrationForm">
+    Contact: <input type="number" name="" id="" formControlName="contact" class="form-control">
+
+
+    Email: <input type="email" name="" id="" formControlName="email" class="form-control">
+    Name: <input type="text" name="" id="" formControlName="name" class="form-control">
+    Password: <input type="password" name="" id="" formControlName="password" class="form-control">
+    Confirm Password: <input type="password" name="" id="" formControlName="password" class="form-control">
+    <br>
+    <input type="button" value="Register" class="btn btn-primary" (click)="fnSubmit()">&nbsp;
+    <input type="reset" value="reset" class="btn btn-danger">
+</form>
+{{customerRegistrationForm.value | json}}
