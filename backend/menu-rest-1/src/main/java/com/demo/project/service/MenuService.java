@@ -20,8 +20,8 @@ public class MenuService {
 	public List<Menu> read() {
 		return mr.findAll();
 	}
-	public Menu read(Integer id) {
-		return mr.findById(id).get();
+	public Menu read(Integer menu_id) {
+		return mr.findById(menu_id).get();
 	}
 	public Menu update(Menu menu) {
 		return mr.save(menu);

@@ -10,6 +10,7 @@ import { CustomerRegistrationService } from '../custome-registration.service';
 })
 export class CustomerLoginComponent implements OnInit {
 customerLoginForm:any;
+isLogin = false;
 o:any;
   constructor(private fb:FormBuilder,private cs:CustomerRegistrationService) { this.customerLoginForm=this.fb.group({
      
@@ -26,10 +27,11 @@ o:any;
       this.o=this.cs.fnLogin(this.customerLoginForm.value).subscribe((data)=>console.log(data));
       if(this.o!=null)
       {
-           
+        alert("u are logged in");
          
       }
     }
+    
   }
  
   

@@ -7,10 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Jst-foods';
-  // constructor(private router:Router){}
-
-  // goToPage(pageName:string):void{
-  //   this.router.navigate([`${pageName}`]);
-  // }
+ 
 }
  

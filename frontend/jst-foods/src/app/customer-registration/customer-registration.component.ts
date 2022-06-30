@@ -25,26 +25,10 @@ export class CustomerRegistrationComponent implements OnInit {
   }
 
   fnSubmit() {
-    var email=this.customerRegistrationForm.controls.email.value;
-    alert(email);
-    this.crs.fnEmail(email).subscribe((data=>{
-      console.log(data);
-      // this.o=this.crs.fnCreate(this.customerRegistrationForm.value).subscribe((data)=>console.log(data));
-      // if(this.o!=null)
-      // {
-      //    alert("Sign-up successfull: You can login and Enjoy");
-      // }
-    }),(error)=>{
-      console.log("email does not exist")
-      //proceed to add new customer
-      this.o=this.crs.fnCreate(this.customerRegistrationForm.value).subscribe((data)=>console.log(data));
-  if(this.o!=null)
-  {
-     alert("Sign-up successfull: You can login and Enjoy");
-  }
-  else{
-    alert("please sign up");
-  }
-    })
-  }
+       this.o=this.crs.fnCreate(this.customerRegistrationForm.value).subscribe((data)=>console.log(data));
+       if(this.o!=null)
+      {
+         alert("Sign-up successfull: You can login and Enjoy");
+       }
+    }
 }

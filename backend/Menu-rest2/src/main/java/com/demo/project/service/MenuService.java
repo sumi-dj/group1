@@ -14,19 +14,9 @@ public class MenuService {
 	private MenuRepository mr;
 	
 	public Menu create(Menu menu) {
+		
 		return mr.save(menu);
 	}
-	public List<Menu> read() {
-		return mr.findAll();
-	}
-	public Menu read(Integer id) {
-		return mr.findById(id).get();
-	}
-	public Menu update(Menu menu) {
-		return mr.save(menu);
-	}
-	public void delete(Menu menu) {
-		mr.delete(menu);
-	}
+	
 	
 }

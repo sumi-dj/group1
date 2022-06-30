@@ -3,42 +3,35 @@ package com.demo.project.entity;
 
 
 import java.util.Arrays;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Menu {
 
 	@Id
-	
-	private Integer  id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer  menu_id;
 	private String name;
 	private String description;
 	private Double price;
-	private byte[] pics;
 	
-	public Menu(Integer id, String name, String description, Double price, byte[] pics) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.price = price;
-		this.pics = pics;
+	
+	
+	
+	public Integer getMenu_id() {
+		return menu_id;
 	}
-	public byte[] getPics() {
-		return pics;
-	}
-	public void setPics(byte[] pics) {
-		this.pics = pics;
-	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setMenu_id(Integer menu_id) {
+		this.menu_id = menu_id;
 	}
 	public String getName() {
 		return name;
@@ -58,22 +51,23 @@ public class Menu {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	public Menu(Integer id, String name, String description, Double price) {
+	@Override
+	public String toString() {
+		return "Menu [menu_id=" + menu_id + ", name=" + name + ", description=" + description + ", price=" + price
+				+ "]";
+	}
+	public Menu(Integer menu_id, String name, String description, Double price) {
 		super();
-		this.id = id;
+		this.menu_id = menu_id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
 	}
-	
 	public Menu() {
 		super();
 	}
-	@Override
-	public String toString() {
-		return "Menu [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", pics="
-				+ Arrays.toString(pics) + "]";
-	}
+
+	
 	
 	
 }

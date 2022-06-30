@@ -3,6 +3,8 @@ package com.demo.project.entity;
 import java.util.Arrays;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,7 +13,7 @@ import javax.persistence.Table;
 public class Menu {
 
 	@Id
-	
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer  id;
 	private String name;
 	private String description;
@@ -19,10 +21,11 @@ public class Menu {
 	
 	
 	
-	public Integer getId() {
+	
+	public Integer getMenu_id() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setMenu_id(Integer menu_id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -43,6 +46,7 @@ public class Menu {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
 	public Menu(Integer id, String name, String description, Double price) {
 		super();
 		this.id = id;
@@ -50,15 +54,13 @@ public class Menu {
 		this.description = description;
 		this.price = price;
 	}
-	
-	public Menu() {
-		super();
-	}
 	@Override
 	public String toString() {
 		return "Menu [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
 	}
-	
+	public Menu() {
+		super();
+	}
 	
 	
 }

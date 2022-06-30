@@ -21,6 +21,7 @@ import { AdminCarComponent } from './admin-car/admin-car.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { AdminCarComponent } from './admin-car/admin-car.component';
     CartComponent,
     DeliveryPartnerComponent,
     AdminCarComponent,
+
  
     
   

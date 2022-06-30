@@ -22,27 +22,12 @@ public class MenuController {
 	private MenuService ms;
 	
 
-	@PostMapping("/menu")
-	public Menu addMenu(@RequestBody Menu menu) {
+	@PostMapping("/cart")
+	public Menu addMenutoCart(@RequestBody Menu menu) {
 		return ms.create(menu);
 	}
 	
-	@GetMapping("/menu")
-	public List<Menu> getAllMenus() {
-		return ms.read();
-	}
-	@GetMapping("/menu/{id}")
-	public Menu findMenuById(@PathVariable("id") Integer id) {
-		return ms.read(id);
-	}
-	@PutMapping("/menu")
-	public Menu modifyMenu(@RequestBody Menu menu) {
-		return ms.update(menu); 
-	}
-	@DeleteMapping("/menu/{id}")
-	public void removeMenu(@PathVariable("id") Integer id) {
-		ms.delete(findMenuById(id));
-	}
+	
 	
 }
 

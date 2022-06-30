@@ -17,10 +17,10 @@ fnLogin(authRequest:any)
 {
   return this.http.post(this.URL+"/login",authRequest);
 }
-fnEmail(id:any)
-{
-  return this.http.get(this.URL+"/email/"+id);
-}
+// fnEmail(id:any)
+// {
+//   return this.http.get(this.URL+"/email/"+id);
+// }
 }
 
 

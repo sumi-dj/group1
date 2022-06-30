@@ -1,35 +1,34 @@
 <!-- menu-grid -->
+<form [formGroup]="menuForm">
 <table class="table table-boardered table-striped table-hover">
     <thead>
     <tr>
-         <th>Id</th><th>Name</th><th>Description</th><th>Price</th>
+         <th>Menu_id</th><th>Name</th><th>Description</th><th>Price</th>
     </tr>
     </thead>
     <tbody>
         <tr *ngFor="let i of menus">
-        <td ><div>{{i.id}}</div></td>
-        <td class="btn btn-success" (click)="fnSelect(i.name,i.id,i.price)"><div>{{i.name}}</div></td>
+        <td ><div>{{i.menu_id}}</div></td>
+        <td><div>{{i.name}}</div></td>
         <td>{{i.description}}</td>
         <td>{{i.price}}</td>
-         <!-- <td>{{i.picture}}</td>   -->
-        
-    
-    
+         <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <input type="button" class="btn btn-primary" value="Add to Cart" (click)="fnADD(i.name)">
+          </div>
+        </div>
         </tr>
     </tbody>
-    
-    <!-- <a routerLink="menu"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a> -->
     </table>
-    
-  
-  
-  <h4 class="text-center">Add to Cart</h4>
-  <form [formGroup]="menuForm">
-       Id:<input type="number" name="" id="" formControlName="id" class="form-control"> 
+  </form>
+  {{menuForm.value | json}}
+ <h4 class="text-center">Add to Cart</h4>
+ <form [formGroup]="menuForm">
+       Id:<input type="number" name="" id="" formControlName="menu_id" class="form-control"> 
      Name: <input type="text" name="" id="" formControlName="name" class="form-control">
      Description:<input type="text" name="" id="" formControlName="description" class="form-control">
      Price:<input type="number" name="" id="" formControlName="price" class="form-control">
-      <!-- Picture:<input type="file"name="" id="" formControlName="picture" class="form-control" (change)="onFileChanged($event)">  -->
+      
       <br>
       <input type="button" value="Add  To Cart" class="btn btn-success" (click)="addMenu()"><br><br>
       <input type="update" value="modify" class="btn btn-primary" (click)="updateMenu()"><br><br>

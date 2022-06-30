@@ -18,17 +18,7 @@ public class CustomerService {
 	@Autowired
 	private CustomerRepository cr;
 	
-	public Customer create(Customer customer) throws CustomerAlreadyExists, CustomerNotFoundException  {
-		Customer temp=readbyEmail(customer.getEmail());
-		if(temp==null)
-		{
-		  cr.save(customer);
-		}
-		else
-		{
-			throw new CustomerAlreadyExists("customer with id:"+customer.getEmail()+"already exists can not create");
-			
-		}
+	public Customer create(Customer customer) {
 		return cr.save(customer);
 	}
 	public List<Customer> read() {
@@ -43,20 +33,6 @@ public class CustomerService {
 		}
 		return c;
 	}
-	public Customer readbyEmail(String email) throws CustomerNotFoundException  {
-		List<Customer> temp = cr.findByEmail(email);
-		Customer c=null;
-		if(temp.size()==1)
-		{
-			c=temp.get(0);
-		}
-		else
-		{
-			throw new CustomerNotFoundException("create new customer");
-			
-		}
-		return c;
-	}
 	public Customer read(String name) {
 		Optional<Customer> temp = cr.findByName(name);
 		Customer c=null;
@@ -67,27 +43,21 @@ public class CustomerService {
 		return c;
 	}
 	public Customer update(Customer customer) {
-		List<Customer> temp = cr.findByEmail(customer.getEmail());
-		Customer c=null;
-		if(temp.size()==1)
+		Customer c=read(customer.getId());
+		if(c!=null)
 		{
-			c=customer;
 			cr.save(customer);
+			c=customer;
 		}
 		return c;
 	}
 	public Customer delete(Integer id) {
-		Optional<Customer> temp = cr.findById(id);
-		Customer c=null;
-		if(temp.isPresent())
+		Customer c=read(id);
+		if(c!=null)
 		{
-			c=temp.get();
-			cr.delete(c);
+			cr.delete(c);			
 		}
 		return c;
 	}
 	
-	
 }
-
-

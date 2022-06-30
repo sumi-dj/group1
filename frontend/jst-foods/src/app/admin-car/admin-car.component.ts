@@ -11,10 +11,11 @@ export class AdminCarComponent implements OnInit {
   menuForm:any;
   selectedFile:any;
   menus:any;
+  cartForm:any
  constructor(private fb:FormBuilder,private ms:AdminCarService) { 
  
  this.menuForm=this.fb.group({
-   id:[],
+   menu_id:[],
    name:[],
    description:[],
    price:[]
@@ -35,19 +36,15 @@ addMenu()
   this.ms.addMenu(this.menuForm.value).subscribe((data)=>{
     console.log(data);
   })}
-//    const formData=new FormData();
-//    formData.append('id',this.menuForm.controls.id.value);
-//    formData.append('name',this.menuForm.controls.name.value);
-//    formData.append('price',this.menuForm.controls.price.value);
-//    formData.append('description',this.menuForm.controls.description.value);
-//    formData.append('picture',this.selectedFile);
-//    console.log(formData);
-//    this.ms.addMenu(formData).subscribe((data)=>{
-//        console.log(data);
-// })}
 updateMenu()
 {
  this.ms.updateMenu(this.menuForm.value).subscribe((data)=>{
+   console.log(data);
+ })
+}
+getAllMenus()
+{
+ this.ms.getAllMenus(this.menuForm.value).subscribe((data)=>{
    console.log(data);
  })
 }
@@ -57,15 +54,25 @@ deleteMenu()
    console.log(data);
  })
 }
-fnSelect(name:any,id:any,price:any)
+// fnSelect(name:any,menu_id:any,price:any)
+//   {
+//    alert("hi you have selected "+name);
+//    var n=name
+//    var p=price
+//    this.ms.findMenuById(menu_id).subscribe((data)=>{
+//     // console.log(data)
+//     this.menuForm.patchValue(data);
+//    })
+//   }
+  
+fnADD(name:any)
   {
-   alert("hi you have selected "+name);
-   var n=name
-   var p=price
-   this.ms.findMenuById(id).subscribe((data)=>{
-    // console.log(data)
-    this.menuForm.patchValue(data);
-   })
-  }
+    alert(name);
+     this.ms.addMenutoCart(name).subscribe((data)=>{
+      console.log(data);
+    
 
+  })
+
+}
 }

@@ -37,16 +37,17 @@ public class MenuController {
 		return ms.read();
 	}
 	@GetMapping("/menu/{id}")
-	public Menu findMenuById(@PathVariable("id") Integer id) {
-		return ms.read(id);
+	public Menu findMenuById(@PathVariable("menu_id") Integer menu_id) {
+		return ms.read(menu_id);
 	}
+	
 	@PutMapping("/menu")
 	public Menu modifyMenu(@RequestBody Menu menu) {
 		return ms.update(menu); 
 	}
 	@DeleteMapping("/menu/{id}")
-	public void removeMenu(@PathVariable("id") Integer id) {
-		ms.delete(findMenuById(id));
+	public void removeMenu(@PathVariable("menu_id") Integer menu_id) {
+		ms.delete(findMenuById(menu_id));
 	}
 	
 }

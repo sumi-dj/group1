@@ -22,9 +22,10 @@ import com.demo.project.exception.CustomerNotFoundException;
 import com.demo.project.service.CustomerService;
 
 
+
 @RestController
 @RequestMapping("/customer")
- @CrossOrigin(origins = {"http://localhost:4200"}) 
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class CustomerController {
 	@Autowired
 	private CustomerService cs;
@@ -32,32 +33,27 @@ public class CustomerController {
 	@Autowired
 	private MenuApi ma;
 	
-	@PostMapping
-	public Customer registerCustomer(@RequestBody Customer customer) throws CustomerAlreadyExists, CustomerNotFoundException
-	{
-		return cs.create(customer);
-	}
-	
 	@GetMapping
-	public List<Customer> findAllCustomers()
+	public List<Customer> getAllCustomers()
 	{
 		return cs.read();
 	}
 	
 	@GetMapping("/{id}")
-	public Customer findCustomerId(@PathVariable("id") Integer id)
+	public Customer findCustomerById(@PathVariable("id")Integer id)
 	{
 		return cs.read(id);
 	}
 	@GetMapping("/{name}")
-	public Customer findCustomeName(@PathVariable("name") String name)
+	public Customer findCustomerByName(@PathVariable("name") String name)
 	{
 		return cs.read(name);
 	}
-	@GetMapping("/email/{id}")
-	public Customer findCustomerByEmail(@PathVariable("id") String email) throws CustomerNotFoundException
+	
+	@PostMapping
+	public Customer addCustomer(@RequestBody Customer customer)
 	{
-		return cs.readbyEmail(email);
+		return cs.create(customer);
 	}
 	
 	@PutMapping
@@ -65,18 +61,17 @@ public class CustomerController {
 	{
 		return cs.update(customer);
 	}
-
+	
 	@DeleteMapping("/{id}")
-	public Customer deleteCustomer(@PathVariable("id") Integer id)
+	public Customer deleteCustomer(@PathVariable("id")Integer id)
 	{
 		return cs.delete(id);
 	}
-	
 	@PostMapping("/login")
 	public Customer validateLogin(@RequestBody AuthRequest authRequest)
 	{
 		String name=authRequest.getName();
-		Customer x = findCustomeName(name); 
+		Customer x = findCustomerByName(name); 
 		
 		boolean status=false;
 		if(x!=null)
@@ -94,11 +89,10 @@ public class CustomerController {
 		return x;
 	}
    
-
+	
 	@GetMapping("/menu")
 	public List<Menu> getAllMenus()
 	{
 		return ma.getAllMenus();
 	}
 }
-
