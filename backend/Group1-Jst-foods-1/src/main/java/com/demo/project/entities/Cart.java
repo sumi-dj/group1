@@ -20,7 +20,12 @@ public class Cart {
 	private Customer customer;
 	
 	
-	public Cart() {}
+
+
+
+	public Cart() {
+		super();
+	}
 
 
 	public Cart(Integer id, Menu menu, Customer customer) {

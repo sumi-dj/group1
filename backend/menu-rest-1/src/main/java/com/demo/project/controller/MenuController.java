@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,36 +20,48 @@ import com.demo.project.entity.Menu;
 import com.demo.project.service.MenuService;
 
 
-
 @RestController
-@CrossOrigin({"http://localhost:4200","*"})
+@RequestMapping("menu")
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class MenuController {
 	@Autowired
 	private MenuService ms;
 	
-
-	@PostMapping("/menu")
-	public Menu addMenu(@RequestBody Menu menu) {
+	@PostMapping
+	public Menu addMenu(@RequestBody Menu menu)
+	{
 		return ms.create(menu);
 	}
 	
-	@GetMapping("/menu")
-	public List<Menu> getAllMenus() {
+	@PostMapping("/add")
+	public Menu addMenu1(@RequestParam("name") String name,@RequestParam("description") String description, @RequestParam("price")Double price, @RequestParam("picture")MultipartFile file) throws IOException
+	{
+		byte [] picture=file.getBytes();
+		Menu menu=new Menu(name, description,price, picture);
+		return ms.create(menu);
+	}
+	
+	@GetMapping
+	public List<Menu> getAllMenus()
+	{
 		return ms.read();
 	}
-	@GetMapping("/menu/{id}")
-	public Menu findMenuById(@PathVariable("menu_id") Integer menu_id) {
-		return ms.read(menu_id);
+	
+	@GetMapping("/{id}")
+	public Menu findMenuById(@PathVariable("id") Integer id)
+	{
+		return ms.read(id);
 	}
 	
-	@PutMapping("/menu")
-	public Menu modifyMenu(@RequestBody Menu menu) {
-		return ms.update(menu); 
-	}
-	@DeleteMapping("/menu/{id}")
-	public void removeMenu(@PathVariable("menu_id") Integer menu_id) {
-		ms.delete(findMenuById(menu_id));
+	@PutMapping
+	public Menu updateProduct(@RequestBody Menu menu)
+	{
+		return ms.update(menu);
 	}
 	
+	@DeleteMapping
+	public Menu deleteProduct(@PathVariable("id")Integer id)
+	{
+		return ms.delete(id);
+	}
 }
-

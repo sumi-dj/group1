@@ -52,9 +52,7 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Customer() {
-		super();
-	}
+	
 	
 	public Customer(Integer id, String name, String email, String contact) {
 		super();
@@ -67,6 +65,9 @@ public class Customer {
 	public String toString() {
 		return "Customer [id=" + id + ", name=" + name + ", email=" + email + ", contact=" + contact + 
 				"]";
+	}
+	public Customer() {
+		super();
 	}
 	
 	

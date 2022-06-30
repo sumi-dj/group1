@@ -19,19 +19,16 @@ public class Menu {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer  menu_id;
+	private Integer  id;
 	private String name;
 	private String description;
 	private Double price;
-	
-	
-	
-	
-	public Integer getMenu_id() {
-		return menu_id;
+	private byte[] picture;
+	public Integer getId() {
+		return id;
 	}
-	public void setMenu_id(Integer menu_id) {
-		this.menu_id = menu_id;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -51,22 +48,36 @@ public class Menu {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	public byte[] getPicture() {
+		return picture;
+	}
+	public void setPicture(byte[] picture) {
+		this.picture = picture;
+	}
 	@Override
 	public String toString() {
-		return "Menu [menu_id=" + menu_id + ", name=" + name + ", description=" + description + ", price=" + price
-				+ "]";
+		return "Menu [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", picture="
+				+ Arrays.toString(picture) + "]";
 	}
-	public Menu(Integer menu_id, String name, String description, Double price) {
+	public Menu(String name, String description, Double price, byte[] picture) {
 		super();
-		this.menu_id = menu_id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
+		this.picture = picture;
+	}
+	public Menu(Integer id, String name, String description, Double price, byte[] picture) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.picture = picture;
 	}
 	public Menu() {
 		super();
 	}
-
+	
 	
 	
 	
