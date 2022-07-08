@@ -1,0 +1,13 @@
+
+<form [formGroup]="addMenuForm">
+    
+    Description: <input type="text" name="" id="" formControlName="description" class="form-control">
+    Name: <input type="text" name="" id="" formControlName="name" class="form-control">
+    Picture: <input type="file" name="" id="" formControlName="picture" class="form-control" (change)="fnChange($event)">
+    Price: <input type="text" name="" id="" formControlName="price" class="form-control">
+    <br>
+    <input type="button" value="Add" class="btn btn-success" (click)="fnAdd()">
+</form>
+
+
+

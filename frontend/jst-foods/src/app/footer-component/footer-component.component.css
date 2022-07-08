@@ -1,0 +1,32 @@
+.content {
+    background-color: rgb(65, 64, 64);
+    padding: 2rem;
+    color: white;
+    margin-top: 2%;
+}
+
+h2 {
+    color: yellow;
+}
+
+p {
+    font-weight: lighter;
+}
+
+.col-sm-4 {
+    padding: 0 2rem 1rem 2.5rem;
+}
+
+.mntr-soc {
+    margin-left: 27%;
+    margin-top: 20px;
+}
+
+.mntr-soc .fa {
+    font-size: 25px;
+    margin-right: 12px;
+}
+
+.mntr-soc .fa:hover {
+    color: white;
+}

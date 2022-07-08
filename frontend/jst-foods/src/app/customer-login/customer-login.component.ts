@@ -14,8 +14,8 @@ isLogin = false;
 o:any;
   constructor(private fb:FormBuilder,private cs:CustomerRegistrationService) { this.customerLoginForm=this.fb.group({
      
-   
-    name:[],
+    id:[],
+    // name:[],
     password:[]
     
   }); }

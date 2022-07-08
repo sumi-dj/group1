@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuGridComponent } from './menu-grid.component';
+import { FooterComponentComponent } from './footer-component.component';
 
-describe('MenuGridComponent', () => {
-  let component: MenuGridComponent;
-  let fixture: ComponentFixture<MenuGridComponent>;
+describe('FooterComponentComponent', () => {
+  let component: FooterComponentComponent;
+  let fixture: ComponentFixture<FooterComponentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuGridComponent ]
+      declarations: [ FooterComponentComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuGridComponent);
+    fixture = TestBed.createComponent(FooterComponentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -74,6 +74,9 @@ public class Menu {
 		this.price = price;
 		this.picture = picture;
 	}
+	public Menu() {
+		super();
+	}
 	
 	
 	

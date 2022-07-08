@@ -1,0 +1,25 @@
+div {
+    width: 40%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+span,
+h2,
+.intrpltn {
+    color: white;
+}
+
+.intrpltn {
+    width: 80%;
+}
+
+form input {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 720px) {
+    div {
+        width: 80%;
+    }
+}

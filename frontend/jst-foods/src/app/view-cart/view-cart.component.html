@@ -1,0 +1,18 @@
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <th>Menu name</th>
+        <th>Menu  picture</th>
+       <th>Customer Id</th>
+        <th>Customer Name</th>  
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of carts">
+            <td>{{c.menu.name}}</td>
+            <td>
+                <img width="100" [src]="'data:image/png;base64,'+c.menu.picture" alt="">
+            </td>
+          <td>{{c.customer.id}}</td>
+            <td>{{c.customer.name}}</td>  
+        </tr>
+    </tbody>
+</table>

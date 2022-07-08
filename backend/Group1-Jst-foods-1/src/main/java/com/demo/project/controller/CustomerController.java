@@ -44,11 +44,11 @@ public class CustomerController {
 	{
 		return cs.read(id);
 	}
-	@GetMapping("/{name}")
-	public Customer findCustomerByName(@PathVariable("name") String name)
-	{
-		return cs.read(name);
-	}
+//	@GetMapping("/{name}")
+//	public Customer findCustomerByName(@PathVariable("name") String name)
+//	{
+//		return cs.read(name);
+//	}
 	
 	@PostMapping
 	public Customer addCustomer(@RequestBody Customer customer)
@@ -70,8 +70,8 @@ public class CustomerController {
 	@PostMapping("/login")
 	public Customer validateLogin(@RequestBody AuthRequest authRequest)
 	{
-		String name=authRequest.getName();
-		Customer x = findCustomerByName(name); 
+		Integer id=authRequest.getId();
+		Customer x = findCustomerById(id); 
 		
 		boolean status=false;
 		if(x!=null)

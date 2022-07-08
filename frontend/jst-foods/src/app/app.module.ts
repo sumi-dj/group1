@@ -12,10 +12,12 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { MenuComponent } from './menu/menu.component';
-import { MenuGridComponent } from './menu-grid/menu-grid.component';
-import { CartComponent } from './cart/cart.component';
 import { DeliveryPartnerComponent } from './delivery-partner/delivery-partner.component';
 import { AdminCarComponent } from './admin-car/admin-car.component';
+import { AddMenuComponent } from './add-menu/add-menu.component';
+import { DisplayMenuComponent } from './display-menu/display-menu.component';
+import { ViewCartComponent } from './view-cart/view-cart.component';
+import { FooterComponentComponent } from './footer-component/footer-component.component';
 
 
 
@@ -31,10 +33,12 @@ import { AdminCarComponent } from './admin-car/admin-car.component';
     NavbarComponent,
     AboutComponent,
     MenuComponent,
-    MenuGridComponent,
-    CartComponent,
     DeliveryPartnerComponent,
     AdminCarComponent,
+    AddMenuComponent,
+    DisplayMenuComponent,
+    ViewCartComponent,
+    FooterComponentComponent,
 
  
     

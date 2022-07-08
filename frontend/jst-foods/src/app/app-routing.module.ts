@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { AddMenuComponent } from './add-menu/add-menu.component';
 import { AdminCarComponent } from './admin-car/admin-car.component';
-import { CartComponent } from './cart/cart.component';
+
 import { CustomerLoginComponent } from './customer-login/customer-login.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { DeliveryPartnerComponent } from './delivery-partner/delivery-partner.component';
+import { DisplayMenuComponent } from './display-menu/display-menu.component';
 import { HomeComponent } from './home/home.component';
-import { MenuGridComponent } from './menu-grid/menu-grid.component';
+
 import { MenuComponent } from './menu/menu.component';
+import { ViewCartComponent } from './view-cart/view-cart.component';
 
 const routes: Routes = [
   
@@ -17,10 +20,11 @@ const routes: Routes = [
     {path:'login',component:CustomerLoginComponent},
     {path:'about',component:AboutComponent},
     {path:'menu',component:MenuComponent},
-    {path:'menugrid',component:MenuGridComponent},
-    {path:'cart',component:CartComponent},
     {path:'dp',component:DeliveryPartnerComponent},
-    {path:'ac',component:AdminCarComponent}
+    {path:'ac',component:AdminCarComponent},
+    {path:'am',component:AddMenuComponent},
+    {path:'dm',component:DisplayMenuComponent},
+    {path:'v',component:ViewCartComponent}
   
 ];
 

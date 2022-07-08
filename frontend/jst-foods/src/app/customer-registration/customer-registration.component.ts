@@ -12,11 +12,11 @@ export class CustomerRegistrationComponent implements OnInit {
   o: any;
   constructor(private fb: FormBuilder, private crs: CustomerRegistrationService) {
     this.customerRegistrationForm = this.fb.group({
-
+      id:[''],
       contact: ['', [Validators.required, Validators.min(10)]],
       email: ['', [Validators.required]],
       name: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.min(8)]],
+      password: ['', [Validators.required]],
       cpassword: ['', [Validators.required]]
     });
   }
@@ -26,9 +26,14 @@ export class CustomerRegistrationComponent implements OnInit {
 
   fnSubmit() {
        this.o=this.crs.fnCreate(this.customerRegistrationForm.value).subscribe((data)=>console.log(data));
+      //  alert(this.customerRegistrationForm.id);
        if(this.o!=null)
-      {
-         alert("Sign-up successfull: You can login and Enjoy");
+      {  
+         alert("Sign-up successfull: You can login and Enjoy  ");
+        alert("login with id 18");
+
+
        }
+      
     }
 }

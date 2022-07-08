@@ -37,6 +37,13 @@ public class Cart {
 	}
 
 
+	public Cart(Menu menu, Customer customer) {
+		super();
+		this.menu = menu;
+		this.customer = customer;
+	}
+
+
 	public Integer getId() {
 		return id;
 	}
