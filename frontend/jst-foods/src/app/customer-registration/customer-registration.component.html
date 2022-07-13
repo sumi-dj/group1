@@ -1,15 +1,18 @@
 <!-- <h4 class="text-center">Customer Registration Form</h4> -->
-<form [formGroup]="customerRegistrationForm">
-    Contact: <input type="number" name="" id="" formControlName="contact" class="form-control">
-
-
-    Email: <input type="email" name="" id="" formControlName="email" class="form-control">
-    Name: <input type="text" name="" id="" formControlName="name" class="form-control">
-    Password: <input type="password" name="" id="" formControlName="password" class="form-control">
-    Confirm Password: <input type="password" name="" id="" formControlName="password" class="form-control">
-    <br>
-    <input type="button" value="Register" class="btn btn-primary" (click)="fnSubmit()">&nbsp;
-    <input type="reset" value="reset" class="btn btn-danger">
-</form>
-
-{{customerRegistrationForm.value | json}}
+<div>
+    <h2 style="text-align: center;">Register Here</h2>
+    <form style="margin-top: 5rem;" [formGroup]="customerRegistrationForm">
+        <span> Contact:</span> <input type="number" name="" id="" formControlName="contact" placeholder="Your Contact Please.." class="form-control">
+        <span> Email:</span> <input type="email" name="" id="" formControlName="email" placeholder="Enter Your Email-address" class="form-control">
+        <span> Name:</span> <input type="text" name="" id="" formControlName="name" placeholder="Enter Your name" class="form-control">
+        <span> Password: </span><input type="password" name="" id="" formControlName="password" placeholder="Enter Password" class="form-control">
+        <span> Confirm Password:</span> <input type="password" name="" id="" formControlName="password" placeholder="Re-Enter the Password" class="form-control">
+        <br>
+        <input type="button" value="Register" class="btn btn-primary" (click)="fnSubmit()">&nbsp;
+        <input type="reset" value="reset" class="btn btn-danger">
+    </form>
+</div>
+<div style="margin-top: 5rem; margin-left: 50%;
+transform: translateX(-50%);" class="intrpltn">
+    {{customerRegistrationForm.value | json}}
+</div>

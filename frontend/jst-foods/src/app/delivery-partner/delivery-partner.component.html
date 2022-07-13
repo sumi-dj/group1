@@ -1,14 +1,17 @@
-<form [formGroup]="deliveryPartnerregistrationForm">
-   
-    Name: <input type="text" nmae="" id="" formControlName="name" class="form-control">
-    Location: <input type="text" nmae="" id="" formControlName="location" class="form-control">
-    Rating: <input type="number" nmae="" id="" formControlName="rating" class="form-control">
-    Suggestion: <input type="text" nmae="" id="" formControlName="suggestions" class="form-control">
-    <br>
+<div>
+    <h2 style="text-align: center;">Register here my partner</h2>
+    <form [formGroup]="deliveryPartnerregistrationForm">
+        <span> Id:</span> <input type="number" nmae="" id="" formControlName="id" class="form-control">
+        <span> Name:</span> <input type="text" nmae="" id="" formControlName="name" class="form-control">
+        <span> Location: </span><input type="text" nmae="" id="" formControlName="location" class="form-control">
+        <span>        Rating:</span> <input type="number" nmae="" id="" formControlName="rating" class="form-control">
+        <span> Suggestion:</span> <input type="text" nmae="" id="" formControlName="suggestions" class="form-control">
+        <br>
 
-    <input type="button" value="Submit" class="btn-success" (click)="fnSubmit()">
-</form>
-
-    {{deliveryPartnerregistrationForm.value|json}}
-
+        <input type="button" value="Submit" class="btn-success" (click)="fnSubmit()">
+    </form>
+    <div style="margin-top: 5rem;" class="intrpltn">
+        {{deliveryPartnerregistrationForm.value|json}}
+    </div>
+</div>
 

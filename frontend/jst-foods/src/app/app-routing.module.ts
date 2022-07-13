@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AddMenuComponent } from './add-menu/add-menu.component';
-import { AdminCarComponent } from './admin-car/admin-car.component';
+
 
 import { CustomerLoginComponent } from './customer-login/customer-login.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
@@ -21,7 +21,7 @@ const routes: Routes = [
     {path:'about',component:AboutComponent},
     {path:'menu',component:MenuComponent},
     {path:'dp',component:DeliveryPartnerComponent},
-    {path:'ac',component:AdminCarComponent},
+    // {path:'ac',component:AdminCarComponent},
     {path:'am',component:AddMenuComponent},
     {path:'dm',component:DisplayMenuComponent},
     {path:'v',component:ViewCartComponent}

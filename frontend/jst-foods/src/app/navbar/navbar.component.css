@@ -1,0 +1,35 @@
+
+ul li a img {
+    margin-top: -65px;
+}
+
+ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 1.5rem;
+    overflow: hidden;
+    background-color: aliceblue;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(58, 151, 245);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li>a.active {
+    color: red;
+}
+
+ul li a:hover {
+    background-color: transparent;
+    text-decoration: underline rgb(243, 102, 41) solid 5px;
+    color: rgb(243, 102, 41);
+}

@@ -1,14 +1,20 @@
 <!-- <h4 class="text-center">Customer Login Form</h4> -->
-<form [formGroup]="customerLoginForm">
-     Id:<input type="number" name="" id="" formControlName="id" class="form-control"> 
-    <!-- UserName: <input type="text" name="" id="" formControlName="name" class="form-control"> -->
-    Password: <input type="password" name="" id="" formControlName="password" class="form-control">
-   
-    <br>
-    <input type="button" value="Login" class="btn btn-primary" (click)="fnsubmit()">&nbsp;
-    <input type="reset" value="reset" class="btn btn-danger">
-   
-</form>
+<div>
+    <h2 style="text-align: center;">Login Here</h2>
+
+    <form style="margin-top: 5rem;" [formGroup]="customerLoginForm">
+        <!-- Id:<input type="number" name="" id="" formControlName="id" class="form-control"> -->
+        <span> UserName:</span> <input type="text" name="" id="" formControlName="name" placeholder="Enter Your Name" class="form-control">
+        <span> Password:</span> <input type="password" name="" id="" formControlName="password" placeholder="Enter Your Password" class="form-control">
+
+        <br>
+        <input type="button" value="Login" class="btn btn-primary" (click)="fnsubmit()">&nbsp;
+        <input type="reset" value="reset" class="btn btn-danger">
+    </form>
+    <div style="margin-top: 5rem;" class="intrpltn">
+        {{customerLoginForm.value | json}}
+    </div>
+</div>
 
     {{customerLoginForm.value | json}}
 

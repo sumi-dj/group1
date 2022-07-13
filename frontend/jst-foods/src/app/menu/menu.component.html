@@ -1,0 +1,226 @@
+<div class="welcome">
+    <h2>Hello Dear customer..Welcome</h2>
+    <div class="bubbles" style="width: 9rem;height: 9rem;background-color: white;border-radius: 50%;margin-top: -3rem;margin-left: 72%;"></div>
+    <div class="bubbles" style="width: 5rem;height: 5rem;background-color: white;border-radius: 50%;margin-top: -6rem;margin-left: 85%;"></div>
+    <div class="bubbles" style="width: 3rem;height: 3rem;background-color: white;border-radius: 50%;margin-top: -6rem;margin-left: 91%;"></div>
+
+    <p>Have a look on the MENU , &nbsp; let us serve you the great...</p>
+</div>
+
+<div class="category" style="margin-top: 5rem;">
+    <h2 style="text-align: center ">Vegetarian</h2>
+</div>
+<ul>
+    <li *ngFor="let f of Vegfoods">
+        <div class="card">
+            <img src="{{f.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{f.name}}
+                </div>
+
+                <div class="restaurant">
+                    <p>From {{f.restaurant}}</p>
+
+                </div>
+                <div class="price">
+                    <p>Price:Rs. {{f.price}}</p>
+                </div>
+
+                <div id="card-footer">
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </li>
+    <li>
+        <div id="last-card" class="last-card" style="padding: 1rem;">
+
+            <div class="content">
+
+                <h3>Hey Dear..</h3>
+                <p>Some more delicious items are waiting for YOU</p>
+                <p class="try" style="margin-top: 2rem;">Have a try</p>
+                <div id="card-footer">
+
+                    <div class="cart-btn">
+                        <button>See more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<div class="category">
+    <h2 class="non-veg" style="text-align: center;">Non-Vegetarian</h2>
+</div>
+
+<ul>
+    <li *ngFor="let f of Nonvegfoods">
+        <div class="card">
+            <img src="{{f.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{f.name}}
+                </div>
+
+                <div class="restaurant">
+                    <p>From {{f.restaurant}}</p>
+
+                </div>
+                <div class="price">
+                    <p>Price:Rs. {{f.price}}</p>
+                </div>
+
+                <div id="card-footer">
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </li>
+    <li>
+        <div class="last-card" style="padding: 1rem;">
+
+            <div class="content">
+
+                <h3>Hey Dear..</h3>
+                <p>Some more delicious items are waiting for YOU</p>
+                <p style="margin-top: 2rem;">Have a try</p>
+                <div id="card-footer">
+
+                    <div class="cart-btn">
+                        <button>See more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+
+<div class="category">
+    <h2 style="text-align: center;">Starters</h2>
+</div>
+
+<ul>
+    <li *ngFor="let f of starters">
+        <div class="card">
+            <img src="{{f.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{f.name}}
+                </div>
+
+                <div class="restaurant">
+                    <p>From {{f.restaurant}}</p>
+
+                </div>
+                <div class="price">
+                    <p>Price:Rs. {{f.price}}</p>
+                </div>
+
+                <div id="card-footer">
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </li>
+    <li>
+        <div class="last-card" style="padding: 1rem;">
+
+            <div class="content">
+
+                <h3>Hey Dear..</h3>
+                <p>Some more delicious items are waiting for YOU</p>
+                <p style="margin-top: 2rem;">Have a try</p>
+                <div id="card-footer">
+
+                    <div class="cart-btn">
+                        <button style="font-size: 11px;border-radius: 50%;border: 1px none;height: 2.5rem;">See more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="category">
+    <h2 style="text-align: center;">Desserts</h2>
+</div>
+
+<ul>
+    <li *ngFor="let f of desserts">
+        <div class="card">
+            <img src="{{f.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{f.name}}
+                </div>
+
+                <div class="restaurant">
+                    <p>From {{f.restaurant}}</p>
+
+                </div>
+                <div class="price">
+                    <p>Price:Rs. {{f.price}}</p>
+                </div>
+
+                <div id="card-footer">
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </li>
+    <li>
+        <div class="last-card" style="padding: 1rem;">
+            <div class="content">
+
+                <h3>Hey Dear..</h3>
+                <p>Some more delicious items are waiting for YOU</p>
+                <p style="margin-top: 2rem;">Have a try</p>
+                <div id="card-footer">
+
+                    <div class="cart-btn">
+                        <button style="font-size: 11px;border-radius: 50%;border: 1px none;height: 2.5rem;">See more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- <app-footer-component></app-footer-component> -->

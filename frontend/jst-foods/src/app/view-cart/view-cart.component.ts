@@ -12,9 +12,9 @@ export class ViewCartComponent implements OnInit {
   constructor(private cartService:CartService) { }
 
   ngOnInit(): void {
-   // this.cartService.fnFindCartByCid(1).subscribe((data)=>{
-    //  this.carts=data;
-   // })
+   this.cartService.fnFindCartByCid(1).subscribe((data)=>{
+      this.carts=data;
+    })
   }
 
 }
