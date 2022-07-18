@@ -19,7 +19,7 @@ import { DisplayMenuComponent } from './display-menu/display-menu.component';
 import { ViewCartComponent } from './view-cart/view-cart.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { FoodComponent } from './food/food.component';
-import { FooterComponent } from './footer/footer.component';
+
 
 
 
@@ -42,8 +42,7 @@ import { FooterComponent } from './footer/footer.component';
     DisplayMenuComponent,
     ViewCartComponent,
     FooterComponentComponent,
-    FoodComponent,
-    FooterComponent
+    FoodComponent
 
  
     

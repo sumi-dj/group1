@@ -11,8 +11,13 @@ export class ViewCartComponent implements OnInit {
   
   constructor(private cartService:CartService) { }
 
+//  
   ngOnInit(): void {
-   this.cartService.fnFindCartByCid(1).subscribe((data)=>{
+    const userdetails = localStorage.getItem('userdetails') as string;
+    const jsonData = JSON.parse(userdetails);
+    console.log(jsonData);
+    
+   this.cartService.fnFindCartByCid(jsonData.id).subscribe((data)=>{
       this.carts=data;
     })
   }

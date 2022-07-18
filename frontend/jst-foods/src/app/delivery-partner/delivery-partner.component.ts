@@ -11,6 +11,7 @@ export class DeliveryPartnerComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.deliveryPartnerregistrationForm=this.fb.group({
+      id:[],
       name:[],
       location:[],
       rating:[],
